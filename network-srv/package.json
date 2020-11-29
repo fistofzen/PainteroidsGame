@@ -1,0 +1,31 @@
+{
+  "name": "network-logging",
+  "version": "1.0.0",
+  "description": "Logging test",
+  "main": "index.js",
+  "dependencies": {
+    "@sap/xsenv": "^2.2.0",
+    "@sap/xssec": "^2.2.5",
+    "aws-sdk": "latest",
+    "cf-nodejs-logging-support": "latest",
+    "cfenv": "^1.2.2",
+    "connect-multiparty": "latest",
+    "express": "latest",
+    "express-formidable": "^1.2.0",
+    "file-type": "^14.1.4",
+    "fs": "latest",
+    "http-methods-enum": "latest",
+    "passport": "^0.4.1",
+    "socket.io": "2.3.0",
+    "uuid": "latest"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --inspect=localhost:4015 index.js",
+    "nodemon": "SET PORT=4003 nodemon --inspect index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  },
+  "license": ""
+}

@@ -1,0 +1,12 @@
+org: b9863320trial
+space: dev
+instances: 1
+instances_contentsrv: 1
+srv_domain: cfapps.eu10.hana.ondemand.com
+srv_host: odata-painter
+ar_host: painter-app
+ar_domain: cfapps.eu10.hana.ondemand.com
+static_web_domain: cfapps.eu10.hana.ondemand.com
+static_web_host: painter-ui-app
+env: dev
+hdi: painteroids-db-hdi-container

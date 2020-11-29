@@ -1,0 +1,29 @@
+{
+  "welcomeFile": "painter/webapp/index.html",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/painter/webapp/(.*)$",
+      "target": "/painter/webapp//$1",
+      "destination": "ui",
+      "authenticationType": "none"      
+    },
+    {
+      "source": "^/network-srv/(.*)$",
+      "target": "/$1",
+      "csrfProtection": false,
+      "destination": "network-srv",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "/$1",
+      "destination": "backend",
+      "authenticationType": "none",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    }
+
+  ]
+}

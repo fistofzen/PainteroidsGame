@@ -1,0 +1,53 @@
+{
+  "name": "painteroids",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^3",
+    "express": "^4",
+    "hdb": "^0.17.1",
+    "shx": "^0.3.2"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^1.7.1",
+    "cross-var": "^1.1.0",
+    "mbt": "1.0.13",
+    "ui5-middleware-cfdestination": "^0.1.7",
+    "@ui5/cli": "^2.0.2",
+    "ui5-middleware-livereload": "^0.1.10",
+    "ui5-middleware-simpleproxy": "^0.2.1",
+    "npm-run-all": "^4.1.5",
+    "sqlite3": "^4.1.1",
+    "eslint": "^6.8.0"
+  },
+  "scripts": {
+    "build:cds": "cds build/all --clean",
+    "deploy:cds": "cds deploy",
+    "ui5:build": "ui5 build --dest app/painter",
+    "start": "npx cds run",
+    "build:ui": "run-p build:painter",
+    "build:mta": "mbt build",
+    "deploy:cf": "cross-var cf deploy mta_archives/painteroids_$npm_package_version.mtar",
+    "deploy:cf:trial": "cross-var cf deploy mta_archives/painteroids_$npm_package_version.mtar -e trial.mtaext",
+    "deploy": "run-s build:mta deploy:cf",
+    "deploy:trial": "run-s build:mta deploy:cf:trial",
+    "build:painter": "ui5 build --config painter/ui5.yaml --clean-dest --include-task=generateManifestBundle --dest deployer/resources/painter"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sql",
+        "[production]": {
+          "kind": "hana"
+        },
+        "model": [
+          "db",
+          "srv"
+        ]
+      }
+    }
+  }
+}
