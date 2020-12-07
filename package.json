@@ -39,14 +39,7 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sql",
-        "[production]": {
-          "kind": "hana"
-        },
-        "model": [
-          "db",
-          "srv"
-        ]
+        "kind": "sqlite"
       }
     }
   }

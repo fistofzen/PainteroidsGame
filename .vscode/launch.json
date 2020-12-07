@@ -31,7 +31,7 @@
       "type": "node",
       "request": "launch",
       "name": "Start Network Server",
-      "cwd": "${workspaceFolder}/network-srv/",
+      "cwd": "${workspaceFolder}/network-srv/src/",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
           "run",

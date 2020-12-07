@@ -18,5 +18,8 @@ entity Drawings : cuid, managed {
     
       lines      : String @title : 'Lines';
       categories : Association to Categories @title : 'Categories';
+      @Core.MediaType: 'image/png'
+      content : LargeBinary; 
+ 
  
 }

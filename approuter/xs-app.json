@@ -6,7 +6,7 @@
   "routes": [
     {
       "source": "^/painter/webapp/(.*)$",
-      "target": "/painter/webapp//$1",
+      "target": "/painter/webapp/$1",
       "destination": "ui",
       "authenticationType": "none"      
     },
