@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/.vscode/cds",
-      "args": [ "run", "--with-mocks", "--in-memory?" ],
+      "args": [ "run", "--production", "--in-memory?" ],
       "skipFiles": [ "<node_internals>/**" ],
       "internalConsoleOptions": "openOnSessionStart",
       "console": "internalConsole",

@@ -6,10 +6,14 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^3",
+    "@sap/cds": "^4",
+    "@sap/xsenv": "^2.2.0",
+    "@sap/hana-client": "^2.4.177",
+    "@sap/xssec": "^2.2.5",
     "express": "^4",
     "hdb": "^0.17.1",
-    "shx": "^0.3.2"
+    "shx": "^0.3.2",
+    "lokijs": "^1.5.6"
   },
   "devDependencies": {
     "@sap/cds-dk": "^1.7.1",
@@ -20,12 +24,15 @@
     "ui5-middleware-livereload": "^0.1.10",
     "ui5-middleware-simpleproxy": "^0.2.1",
     "npm-run-all": "^4.1.5",
-    "sqlite3": "^4.1.1",
     "eslint": "^6.8.0"
   },
   "scripts": {
     "build:cds": "cds build/all --clean",
+    "build": "cds build/all --clean",
+    "env": "cp ./default-env.json ./db/default-env.json && cp ./default-env.json ./srv/default-env.json",
+    "dbbuild": "cds build && cd ./db && npm start",
     "deploy:cds": "cds deploy",
+    "hana": "cds deploy --to hana:painteroids --auto-undeploy",
     "ui5:build": "ui5 build --dest app/painter",
     "start": "npx cds run",
     "build:ui": "run-p build:painter",
@@ -37,9 +44,44 @@
     "build:painter": "ui5 build --config painter/ui5.yaml --clean-dest --include-task=generateManifestBundle --dest deployer/resources/painter"
   },
   "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "build": {
+      "target": ".",
+      "tasks": [
+        {
+          "src": "db",
+          "for": "hana",
+          "options": {
+            "model": [
+              "db",
+              "srv"
+            ]
+          }
+        },
+        {
+          "src": "srv",
+          "for": "node-cf",
+          "options": {
+            "model": [
+              "db",
+              "srv"
+            ]
+          }
+        }
+      ]
+    },
     "requires": {
       "db": {
-        "kind": "sqlite"
+        "kind": "sql",
+        "[production]": {
+          "kind": "hana"
+        },
+        "model": [
+          "db",
+          "srv"
+        ]
       }
     }
   }

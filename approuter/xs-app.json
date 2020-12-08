@@ -10,13 +10,7 @@
       "destination": "ui",
       "authenticationType": "none"      
     },
-    {
-      "source": "^/network-srv/(.*)$",
-      "target": "/$1",
-      "csrfProtection": false,
-      "destination": "network-srv",
-      "authenticationType": "none"
-    },
+
     {
       "source": "^/(.*)$",
       "target": "/$1",
