@@ -1,0 +1,37 @@
+ <mvc:View controllerName="com.pai.ocn.painter.controller.PainterView"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:l="sap.ui.layout"
+  xmlns:hd="com.pai.ocn.painter.control">
+
+
+  <App id="idAppControl" >
+    <pages>
+      <Page showHeader="false">
+        <content>
+          <hd:Splash hideSplash="onHideSplash" />
+          <hd:Header newDoddle="onNewDoddle" playMusic="onPlayMusic" eraseCanvas="onEraseCanvas" sendDoddle="onSendDoddle" type="{/Name}"/>
+          <hd:Canvas id="drawonme"/>
+
+          
+          <Panel width="auto" class="myPanel" accessibleRole="Region" id="thumbnails">
+  
+            <content>
+             
+            </content>
+          </Panel>
+
+
+          
+
+
+        </content>
+
+
+     
+
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
