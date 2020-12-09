@@ -5,8 +5,16 @@ sap.ui.define(
     "sap/ui/model/json/JSONModel",
     "com/pai/ocn/painter/control/Drawings",
     "../libs/socket",
+    "sap/m/Dialog",
+    "sap/m/DialogType",
+    "sap/m/Button",
+    "sap/m/ButtonType",
+    "sap/m/List",
+    "sap/m/StandardListItem",
+    "sap/m/Text",
+    "sap/ui/core/Fragment"
   ],
-  function (Controller, models, JSONModel, Drawings, socket) {
+  function (Controller, models, JSONModel, Drawings, socket, Dialog, DialogType, Button, ButtonType, List, StandardListItem, Text,Fragment) {
     "use strict";
     var audio;
     var interval;
@@ -41,13 +49,7 @@ sap.ui.define(
             }.bind(this)
           )
           .fail(function () {
-            MessageBox.error(oBundle.getText("datarequestfailed"), {
-              onClose: function (action) {
-                if (action !== MessageBox.Action.CLOSE) {
-                  //do nothing
-                }
-              }.bind(this),
-            });
+          
           });
       },
       onSendDoddle: function () {
@@ -226,7 +228,7 @@ sap.ui.define(
         var timer = oResult.Duration,
           minutes,
           seconds;
-        interval = setInterval(function () {
+        interval = setInterval( () => {
           minutes = parseInt(timer / 60, 10);
           seconds = parseInt(timer % 60, 10);
 
@@ -236,10 +238,53 @@ sap.ui.define(
           $("#buttons span")[0].textContent = minutes + ":" + seconds;
 
           if (--timer < 0) {
-            timer = oResult.Duration;
+            clearInterval(interval);
+            this.freezeElement();
+            // timer = oResult.Duration;
           }
-        }, 1000);
+        }, 100);
       },
+
+      //freeze the screen
+      freezeElement: function(){
+
+        this.openEndGameDialog();
+
+      },
+
+      _getDialog : function () {
+       
+        if (!this._oDialog) {
+           this._oDialog = sap.ui.xmlfragment("");
+           this.getView().addDependent(this._oDialog);
+        }
+        return this._oDialog;
+     },
+      openEndGameDialog : function() {
+  
+          var oView = this.getView();  
+          // create dialog lazily
+          if (!this.pDialog) {
+            this.pDialog = Fragment.load({
+              id: oView.getId(),
+              name: "com.pai.ocn.painter.view.fragments.GameEndDialog",
+              controller: this
+            }).then(function (oDialog) {
+              oView.addDependent(oDialog);
+              return oDialog;
+            });
+          }
+          this.pDialog.then(function(oDialog) {
+            oDialog.open();
+          });
+      },
+      onFinishGame:function () {
+        this.byId("endDialog").close();
+     
+
+      }
+
+      
     });
   }
 );
