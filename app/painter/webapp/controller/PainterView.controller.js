@@ -94,7 +94,7 @@ sap.ui.define(
                     data: image, //Data as js object
                     processData: false,
                     success: function () {
-                      //you can get the categories
+                      //you can get the categories, because image is succesfully saved to the HANA DB
 
                       $.ajax({
                         type: "GET",
