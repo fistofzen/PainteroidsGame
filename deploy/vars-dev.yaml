@@ -8,5 +8,7 @@ ar_host: painter-app
 ar_domain: cfapps.eu10.hana.ondemand.com
 static_web_domain: cfapps.eu10.hana.ondemand.com
 static_web_host: painter-ui-app
+content_server_domain: cfapps.eu10.hana.ondemand.com
+content_server_host: painter-content-srv
 env: dev
 hdi: painteroids-db-hdi-container

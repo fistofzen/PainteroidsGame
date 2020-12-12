@@ -10,7 +10,19 @@
       "destination": "ui",
       "authenticationType": "none"      
     },
-
+    {
+      "source": "^/painter/webapp-guess/(.*)$",
+      "target": "/painter/webapp-guess/$1",
+      "destination": "ui-guess",
+      "authenticationType": "none"      
+    },
+    {
+      "source": "^/content-srv/(.*)$",
+      "target": "/$1",
+      "csrfProtection": false,
+      "destination": "content-srv",
+      "authenticationType": "none"
+    },
     {
       "source": "^/(.*)$",
       "target": "/$1",

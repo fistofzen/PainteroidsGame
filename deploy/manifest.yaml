@@ -19,7 +19,9 @@ applications:
       destinations: |
         [
           {"name":"backend","url":"https://((srv_host)).((srv_domain))/","forwardAuthToken":false},
-          {"name":"ui","url":"https://((static_web_host)).((static_web_domain))/","forwardAuthToken":false}
+          {"name":"ui","url":"https://((static_web_host)).((static_web_domain))/","forwardAuthToken":false},
+          {"name":"content-srv","url":"https://((content_server_host)).((content_server_domain))/","forwardAuthToken":true}
+
         ]
       SESSION_TIMEOUT: 60
     instances: ((instances))
@@ -34,3 +36,10 @@ applications:
     disk_quota: 400M
     instances: 1
     memory: 56M
+
+  - name: painter-contentsrv-green
+    buildpacks:
+      - nodejs_buildpack
+    disk_quota: 400M
+    instances: ((instances_contentsrv))
+    memory: 100M

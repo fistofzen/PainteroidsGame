@@ -162,10 +162,10 @@ fi
 if [ "$DEPLOY_CS" ]
 then
     cd "$WD/.."
-    cd content-server
+    cd content-srv
     npm install
     cd ..
-    cf push -f deploy/manifest.yaml painter-contentsrv-green -p content-server --no-route --vars-file deploy/${CONFIG_FILE}
+    cf push -f deploy/manifest.yaml painter-contentsrv-green -p content-srv --no-route --vars-file deploy/${CONFIG_FILE}
     cf map-route painter-contentsrv-green ${config_content_server_domain}  -n ${config_content_server_host}
     cf stop painter-contentsrv-${config_env} || echo "assuming content server does not exist"
     cf delete -f painter-contentsrv-${config_env}
