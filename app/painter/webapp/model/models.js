@@ -12,7 +12,6 @@ sap.ui.define([
     },
     createMainModel: function () {
       var oModel = new JSONModel({
-				// step 1
         ID: "",
         Name : ""
 			});

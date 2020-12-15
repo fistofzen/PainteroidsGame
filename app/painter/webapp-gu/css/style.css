@@ -98,6 +98,28 @@
   display: table;
   clear: both;
 }
+.sapMScrollCont{
+  background-color: #555321;
+   background-image: url("../images/bg.png");
+
+}
+
+.sapMImg{
+
+  background-color: #FAE5D3;
+
+}
+.sapFDynamicPageContent {
+    background-color: #555321;
+   background-image: url("../images/bg.png");
+
+}
+
+.sapFDynamicPage .sapFDynamicPageContentWrapperStandard>.sapFDynamicPageContent, .sapFDynamicPage .sapFDynamicPageContentWrapperSolid>.sapFDynamicPageContent {
+
+     background-color: #D6DBDF;
+
+}
 
 .splash {  
     position:absolute;
@@ -106,7 +128,7 @@
     width:100%;
     height:100%;
     z-index:1000;
-    background-color: white;
+    background-color: #243321;
     
     position: absolute;
     z-index: 1000;
@@ -120,14 +142,12 @@
     font-size:36px !important;
     text-align: center !important;
     text-decoration:none !important;
-    background-color:none !important;
+    background-color:#fae7cb !important;
     display:block !important;
     position:relative;
     padding:2px 10px;
-    width: 64px;
-    height: 64px;
-
-    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
     filter: dropshadow(color=#000, offx=0px, offy=1px);
     
@@ -137,11 +157,10 @@
     
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px; */
+    border-radius: 5px;
 
   }
 
- 
   .myplaymusicbutton{
     color:white !important;
     font-family:Helvetica, sans-serif !important;
@@ -149,15 +168,16 @@
     font-size:36px !important;
     text-align: center !important;
     text-decoration:none !important;
-    background-color:none !important;
+    background-color:#c0ec21 !important;
     display:block !important;
     position:relative;
-    padding:2px 10px;
-    width: 64px;
-    height: 64px;
-    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding:20px 10px !important;
+        width:200px !important;
+    height:80px !important;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
-    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    filter: dropshadow(color=#000, offx=1px, offy=1px);
     
     -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
     -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
@@ -165,17 +185,11 @@
     
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 0px; */
+    border-radius: 5px;
 
-  }.sapMDialog>.sapMDialogSection {
-    background: none !important;
-}.sapUiShd {
-      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);  
-}
+  }
 
-  .sapMDialog>.sapMDialogSection {
-    /* background: #5f2626; */
-}
+  
   .myerasebutton{
     color:white !important;
     font-family:Helvetica, sans-serif !important;
@@ -183,13 +197,12 @@
     font-size:36px !important;
     text-align: center !important;
     text-decoration:none !important;
-    background-color:none !important;
+    background-color:#ffb385 !important;
     display:block !important;
     position:relative;
     padding:2px 10px;
-    width: 64px;
-    height: 64px;
-    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
     filter: dropshadow(color=#000, offx=0px, offy=1px);
     
@@ -199,7 +212,7 @@
     
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px; */
+    border-radius: 5px;
 
   }
   
@@ -210,23 +223,23 @@
     font-size:36px !important;
     text-align: center !important;
     text-decoration:none !important;
-    background-color:none !important;
+    background-color:#ff7272 !important;
     display:block !important;
     position:relative;
     padding:2px 10px;
-    width: 64px;
-    height: 64px;
-    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        width:100px !important;
+    height:80px !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
     filter: dropshadow(color=#000, offx=0px, offy=1px);
     
     -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
     -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
     box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
-    
+    margin: 20px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px; */
+    border-radius: 5px;
 
   }
 
@@ -242,11 +255,12 @@
     display:block !important;
     position:relative;
     padding:2px 40px;
-    
+    width:100px !important;
+    height:80px !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
     filter: dropshadow(color=#000, offx=0px, offy=1px);
-    
+    margin: 20px;
     -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
     -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
     box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
@@ -279,10 +293,6 @@
     z-index: 1000;
 }
  
- 
-.sapMImg {
-    opacity:1;
-}
 .buttoncontainer{
     margin: auto;
     /* display: block; */

@@ -11,9 +11,9 @@
       "authenticationType": "none"      
     },
     {
-      "source": "^/painter/webapp-guess/(.*)$",
-      "target": "/painter/webapp-guess/$1",
-      "destination": "ui-guess",
+      "source": "^/painter/webapp-gu/(.*)$",
+      "target": "/painter/webapp-gu/$1",
+      "destination": "ui",
       "authenticationType": "none"      
     },
     {

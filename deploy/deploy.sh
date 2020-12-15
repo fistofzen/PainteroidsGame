@@ -103,7 +103,7 @@ fi
 if [ "$DEPLOY_DB" ]
 then
     #cds deploy --to hana
-    cd "$WD/../gen/db"
+    cd "$WD/../db/src/gen"
     npm install
     cf push -f manifest.yaml
     cd "$WD"

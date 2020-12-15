@@ -1,0 +1,56 @@
+<mvc:View
+	controllerName="sap.ui.demo.orderbrowser.controller.Detail"
+	xmlns="sap.m"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout">
+
+
+	<Page  showHeader="false" >
+		 
+		<content>
+			<VBox>
+ <Panel width="auto" class="myPanel" accessibleRole="Region" id="thumbnails">
+  
+            <content>
+             
+            </content>
+          </Panel>
+		  	<l:HorizontalLayout  class="sapUiContentPadding" allowWrapping="false" width="100%" >
+
+
+		    <!-- <RadioButtonGroup columns="5" valueState="Error" id="rd1" buttons="{/modelData/riskData}" width="100%" class="sapUiMediumMarginBottom" >
+				<RadioButton text="{name}" selected = "{Selected}" />
+			</RadioButtonGroup> -->
+</l:HorizontalLayout>
+      <FlexBox  class="sapUiLargeMarginBegin sapUiLargeMarginBottom" id="rd1" 
+        
+        justifyContent="Center">
+      <items>
+       </items>
+    </FlexBox>
+
+     <FlexBox  class="sapUiLargeMarginBegin sapUiLargeMarginBottom"  
+        
+        justifyContent="Center">
+      <items>
+	<Input
+			value=""
+			description="Adınız/Soyadınız"
+			width="400px"
+			fieldWidth="75%"
+			class="myerasebutton" />
+		
+       </items>
+    </FlexBox>
+
+
+ 
+
+
+			</VBox>
+		</content>
+ 
+	</Page>
+	
+</mvc:View>

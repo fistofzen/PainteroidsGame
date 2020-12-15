@@ -15,9 +15,12 @@ entity Categories  {
 
 
 entity Drawings : cuid, managed {
-    
-      lines      : String @title : 'Lines';
+      gameId:String;
+      lines      : LargeString @title : 'Lines';
       categories : Association to Categories @title : 'Categories';
+      finished: Boolean;
+      username: String;
+
       @Core.MediaType: mediaType
       content : LargeBinary ;
 

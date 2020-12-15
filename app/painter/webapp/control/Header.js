@@ -1,16 +1,16 @@
 sap.ui.define(
-    ["sap/ui/core/Control","sap/m/Button"],
-    function (Control,Button) {
+    ["sap/ui/core/Control","sap/m/Button","sap/m/Image"],
+    function (Control,Button, Image) {
       return Control.extend("com.pai.ocn.painter.control.Header", {
         metadata: {
           properties: {
             type: { type: "string" }
           },
           aggregations: {
-            _newDoddle: { type: "sap.m.Button", multiple: false },
-            _sendDoddle: { type: "sap.m.Button", multiple: false },
-            _eraseCanvas: { type: "sap.m.Button", multiple: false },
-            _playMusic: { type: "sap.m.Button", multiple: false }
+            _newDoddle: { type: "sap.m.Image", multiple: false },
+            _sendDoddle: { type: "sap.m.Image", multiple: false },
+            _eraseCanvas: { type: "sap.m.Image", multiple: false },
+            _playMusic: { type: "sap.m.Image", multiple: false }
 
           },
           events: {
@@ -22,30 +22,30 @@ sap.ui.define(
         },
         init: function () {
 
-          this.setAggregation("_eraseCanvas", new Button({
-            icon: "sap-icon://activate",
+          this.setAggregation("_eraseCanvas", new Image({
+            src: "resources/img/sil.png",
             press: function () {
               this.fireEraseCanvas();
             }.bind(this)
           }).addStyleClass("myerasebutton"));
 
-          this.setAggregation("_newDoddle", new Button({
-            icon: "sap-icon://request",
+          this.setAggregation("_newDoddle", new Image({
+            src: "resources/img/yeni.png",
             press: function () {
               this.fireNewDoddle();
             }.bind(this)
           }).addStyleClass("myrefreshbutton"));
 
-          this.setAggregation("_sendDoddle", new Button({
-            icon: "sap-icon://paper-plane",
+          this.setAggregation("_sendDoddle", new Image({
+            src: "resources/img/tamam.png",
             press: function () {
               this.fireSendDoddle();
             }.bind(this)
           }).addStyleClass("mysendbutton"));
 
 
-          this.setAggregation("_playMusic", new Button({
-            icon: "sap-icon://sound-loud",
+          this.setAggregation("_playMusic", new Image({
+            src: "resources/img/ses.png",
             id:"soundButton",
             press: function () {
               this.firePlayMusic();

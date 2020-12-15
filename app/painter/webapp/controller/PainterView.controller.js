@@ -44,7 +44,9 @@ sap.ui.define(
                 ": " +
                 oResult.value[0].Name;
               this.getModel().setSizeLimit(oResult.length);
+              oResult.value[0].rand = that.generateRandom(10);
               this.getModel().setData(oResult.value[0]);
+          
               that.startTimer(oResult.value[0]);
             }.bind(this)
           )
@@ -64,7 +66,8 @@ sap.ui.define(
 
         var oNewLocation = {
           lines: this.getModel().getProperty("/Lines"),
-          categories_Catid: 22,
+          categories_Catid: this.getModel().getData().Catid,
+          gameId: this.getModel().getData().rand,
           mediaType: "image/png",
         };
 
@@ -138,11 +141,12 @@ sap.ui.define(
                                     ": " +
                                     oResult.value[0].Name;
                                   that.getModel().setSizeLimit(oResult.length);
+                                  oResult.value[0].rand =  that.getModel().getData().rand;
                                   that.getModel().setData(oResult.value[0]);
 
-                                  if (interval > 0) clearInterval(interval);
+                                  //if (interval > 0) clearInterval(interval);
 
-                                  that.startTimer(oResult.value[0]);
+                                  //that.startTimer(oResult.value[0]);
                                   that.getView().byId("drawonme").eraseCanvas();
                                 }.bind(this)
                               )
@@ -160,6 +164,16 @@ sap.ui.define(
         );
 
         oBinding.create(oNewLocation);
+      },
+
+      generateRandom: function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
       },
       onEraseCanvas: function () {
         var socket = io("/content-srv", {
@@ -208,7 +222,7 @@ sap.ui.define(
 
               if (interval > 0) clearInterval(interval);
 
-              that.startTimer(oResult.value[0]);
+              //that.startTimer(oResult.value[0]);
               this.getView().byId("drawonme").eraseCanvas();
             }.bind(this)
           )
@@ -242,7 +256,7 @@ sap.ui.define(
             this.freezeElement();
             // timer = oResult.Duration;
           }
-        }, 10);
+        }, 1000);
       },
 
       //freeze the screen
@@ -282,10 +296,10 @@ sap.ui.define(
         this.byId("endDialog").close();
      
         let newLinebrk = ["test"];
-        this.fileUploaderChange(newLinebrk);
+        this.finishGameOk(newLinebrk);
       },
 
-      fileUploaderChange: function (oControlEvent) {
+      finishGameOk: function (oControlEvent) {
  
  
           jQuery.ajax("/content-srv/", {
