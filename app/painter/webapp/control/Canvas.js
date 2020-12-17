@@ -81,7 +81,7 @@ sap.ui.define(
               x: brush.x,
               y: brush.y,
           });
-          console.log("x:" +e.pageX + " y:" + e.pageY)
+          //console.log("x:" +e.pageX + " y:" + e.pageY)
           this.paint();
       }
     },
@@ -104,7 +104,7 @@ sap.ui.define(
             x: brush.x,
             y: brush.y,
         });
-        console.log("x:" +e.pageX + " y:" + e.pageY)
+        //console.log("x:" +e.pageX + " y:" + e.pageY)
         this.paint();
 
         this.getModel().setProperty("/Lines",JSON.stringify(strokes));
@@ -120,8 +120,9 @@ sap.ui.define(
     onmousedown:  function(e) {
       rect = canvas[0].getBoundingClientRect();
       brush.down = true;
+     
       currentStroke = {
-        color: brush.color,
+        color:       canvas[0].getContext("2d").fillStyle ,
         size: brush.size,
         points: [],
       };

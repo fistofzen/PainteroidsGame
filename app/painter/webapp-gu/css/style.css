@@ -104,11 +104,7 @@
 
 }
 
-.sapMImg{
-
-  background-color: #FAE5D3;
-
-}
+ 
 .sapFDynamicPageContent {
     background-color: #555321;
    background-image: url("../images/bg.png");
@@ -128,9 +124,17 @@
     width:100%;
     height:100%;
     z-index:1000;
-    background-color: #243321;
-    
-    position: absolute;
+    background-color: #111222;
+    background-image: url('../images/bg3.png');
+ 
+   /* Full height */
+   height: 100%;
+ 
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+  
     z-index: 1000;
   
   }
@@ -243,7 +247,22 @@
 
   }
 
+}
 
+ 
+.sapMImg {
+  opacity:1;
+  /* background-color: #FAE5D3; */
+}
+.sapMDialog>.sapMDialogSection {
+  background: none !important;
+}.sapUiShd {
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);  
+}
+
+.sapMDialog>.sapMDialogSection {
+  /* background: #5f2626; */
+}
   .mystartbutton{
     color:white !important;
     font-family:Helvetica, sans-serif !important;
@@ -255,7 +274,7 @@
     display:block !important;
     position:relative;
     padding:2px 40px;
-    width:100px !important;
+    width:180px !important;
     height:80px !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
@@ -270,25 +289,56 @@
     border-radius: 5px;
 
   }
+
+
+  
+
+  .mystartbutton2{
+    color:white !important;
+    font-family:Helvetica, sans-serif !important;
+    font-weight:bold !important;
+    font-size:36px !important;
+    text-align: center !important;
+    text-decoration:none !important;
+    background-color:#F95738 !important;
+    display:block !important;
+    position:relative;
+    padding:2px 40px;
+    width:300px !important;
+    height:80px !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    margin: 20px;
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+  }
+
+
   .sapMBtnInner{
 
     background-color:Transparent !important;
     border:none;
-    color:white;
+    color:#4e4e0c !important;;
     
   }
   .splashview-hero {
     width: 90%;
     max-width: 1000px;
     max-height: 800px;
-    min-height: 600px;
-    margin-top: 60px;
+    min-height: 300px;
+    margin-top: 0px;
     margin: auto;
     flex-grow: 20;
     background-position: center;
     background-size: contain;
-    background-image: url('../resources/img/splash2.svg');
-    background-repeat: no-repeat;
+
     position: relative;
     z-index: 1000;
 }
@@ -336,5 +386,8 @@
     border-radius: 5px;
   }
   
+
+  
+
 
   

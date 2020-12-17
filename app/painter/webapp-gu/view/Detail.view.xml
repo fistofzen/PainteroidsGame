@@ -34,12 +34,7 @@
         
         justifyContent="Center">
       <items>
-	<Input
-			value=""
-			description="Adınız/Soyadınız"
-			width="400px"
-			fieldWidth="75%"
-			class="myerasebutton" />
+ 
 		
        </items>
     </FlexBox>

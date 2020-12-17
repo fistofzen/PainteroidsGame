@@ -2,8 +2,9 @@ sap.ui.define([
 	"./BaseController",
 	"sap/ui/model/json/JSONModel",
 	"../model/formatter",
-	"sap/m/library"
-], function(BaseController, JSONModel, formatter, mobileLibrary) {
+	"sap/m/library",
+	"sap/ui/core/Fragment"
+], function(BaseController, JSONModel, formatter, mobileLibrary,Fragment) {
 	"use strict";
 
 	// shortcut for sap.m.URLHelper
@@ -248,8 +249,70 @@ sap.ui.define([
  
 		},
 		myFunction : function(a,b) {
-			alert(a + " " + b);
+			
+			var that = this;
+
+			var right = b;
+			var answer = a;
+			var userName = this.getView().getModel("main").Name;
+			
+
+			var oNewLocation = {
+				gameId:this._sObjectId,
+				guidid:this._sObjectId,
+		 
+				username: userName,
+				answer:answer,
+				right1:right
+	 
+			  };
+	  
+			 
+			  var oBinding = this.getModel().bindList("/Guesses");
+	  
+			  oBinding.attachCreateCompleted(
+				function (oEvent) { 
+				  //not success
+				  if (!oEvent.getParameter("success")) {
+					 
+				  } else {
+					
+					if(a === b)
+						that.openEndGameDialog();
+
+				  }
+				}.bind(this)
+			  );
+	  
+			  oBinding.create(oNewLocation);
+
+
+			//save to
 		},
+
+		openEndGameDialog : function() {
+  
+			var oView = this.getView();  
+			// create dialog lazily
+			if (!this.pDialog) {
+			  this.pDialog = Fragment.load({
+				id: oView.getId(),
+				name: "sap.ui.demo.orderbrowser.view.fragments.GameEndDialog",
+				controller: this
+			  }).then(function (oDialog) {
+				oView.addDependent(oDialog);
+				return oDialog;
+			  });
+			}
+			this.pDialog.then(function(oDialog) {
+			  oDialog.open();
+			});
+		},
+		onFinishGame:function () {
+		  this.byId("endDialog").close();
+ 
+		},
+
 		_onBindingChange : function () {
 			var oView = this.getView(),
 				oElementBinding = oView.getElementBinding();

@@ -31,3 +31,16 @@ entity Drawings : cuid, managed {
  
  
 }
+
+entity Guesses : cuid, managed {
+      gameId:String;
+      guidid:String;
+      categories : Association to Categories @title : 'Categories';
+      finished: Boolean;
+      username: String;
+      answer: String;
+      right1 :String;
+      fileName: String;
+      applicationName: String;  
+}
+

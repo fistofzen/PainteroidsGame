@@ -193,7 +193,31 @@ sap.ui.define(
         var audio = new Audio("../webapp/resources/sound/erase.mp3");
         audio.play();
       },
-
+      onFireRed: function () {
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").strokeStyle = '#F26968';
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").fillStyle = '#F26968';
+       
+      },  
+      onFireBlue: function () {
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").strokeStyle = '#2A93D5';
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").fillStyle = '#2A93D5';
+             },
+      onFireBlack: function () {
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").strokeStyle = '#000000';
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").fillStyle = '#000000';
+             },
+      onFireGreen: function () {
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").strokeStyle = '#6CBF84';
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").fillStyle = '#6CBF84';
+             },
+      onFireYellow: function () {
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").strokeStyle = '#FAF417';
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").fillStyle = '#FAF417';
+             },
+      onFireOrange: function () {
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").strokeStyle = '#FF7E5F';
+        $("#container-painter---idAppControl--drawonme")[0].getContext("2d").fillStyle = '#FF7E5F';
+             },
       onPlayMusic: function () {
         if (audio) {
           audio.pause();
@@ -293,7 +317,7 @@ sap.ui.define(
           });
       },
       onFinishGame:function () {
-        this.byId("endDialog").close();
+        //this.byId("endDialog").close();
      
         let newLinebrk = ["test"];
         this.finishGameOk(newLinebrk);

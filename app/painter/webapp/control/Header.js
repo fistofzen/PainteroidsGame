@@ -10,7 +10,15 @@ sap.ui.define(
             _newDoddle: { type: "sap.m.Image", multiple: false },
             _sendDoddle: { type: "sap.m.Image", multiple: false },
             _eraseCanvas: { type: "sap.m.Image", multiple: false },
-            _playMusic: { type: "sap.m.Image", multiple: false }
+            _playMusic: { type: "sap.m.Image", multiple: false },
+            _black: { type: "sap.m.Image", multiple: false },
+            _red: { type: "sap.m.Image", multiple: false },
+            _green: { type: "sap.m.Image", multiple: false },
+            _blue: { type: "sap.m.Image", multiple: false },
+            _orange: { type: "sap.m.Image", multiple: false },
+            _yellow: { type: "sap.m.Image", multiple: false },
+
+
 
           },
           events: {
@@ -18,6 +26,13 @@ sap.ui.define(
             sendDoddle: {},
             eraseCanvas: {},
             playMusic: {},
+            black:{},
+            red:{},
+            green:{},
+            blue:{},
+            orange:{},
+            yellow:{}
+
           }
         },
         init: function () {
@@ -52,6 +67,59 @@ sap.ui.define(
             }.bind(this)
           }).addStyleClass("myplaymusicbutton"));
 
+          //colors
+
+
+          this.setAggregation("_black", new Image({
+            src: "resources/img/black.png",
+            id:"blackButton",
+            press: function () {
+              this.fireBlack();
+            }.bind(this)
+          }).addStyleClass("myblackbutton"));
+
+          this.setAggregation("_red", new Image({
+            src: "resources/img/red.png",
+            id:"redButton",
+            press: function () {
+              this.fireRed();
+            }.bind(this)
+          }).addStyleClass("myblackbutton"));
+
+
+          this.setAggregation("_green", new Image({
+            src: "resources/img/green.png",
+            id:"greenButton",
+            press: function () {
+              this.fireGreen();
+            }.bind(this)
+          }).addStyleClass("myblackbutton"));
+
+          this.setAggregation("_blue", new Image({
+            src: "resources/img/blue.png",
+            id:"blueButton",
+            press: function () {
+              this.fireBlue();
+            }.bind(this)
+          }).addStyleClass("myblackbutton"));
+
+          this.setAggregation("_orange", new Image({
+            src: "resources/img/orange.png",
+            id:"orangeButton",
+            press: function () {
+              this.fireOrange();
+            }.bind(this)
+          }).addStyleClass("myblackbutton"));
+
+          this.setAggregation("_yellow", new Image({
+            src: "resources/img/yellow.png",
+            id:"yellowButton",
+            press: function () {
+              this.fireYellow();
+            }.bind(this)
+          }).addStyleClass("myblackbutton"));
+
+
 
         },
         renderer: {
@@ -64,7 +132,11 @@ sap.ui.define(
             oRm.openEnd();
             
 
-                
+            // oRm.renderControl(oControl.getAggregation("_red"));
+            // oRm.renderControl(oControl.getAggregation("_blue"));
+            // oRm.renderControl(oControl.getAggregation("_green"));
+            // oRm.renderControl(oControl.getAggregation("_orange"));
+            // oRm.renderControl(oControl.getAggregation("_yellow"));
                 //for the doodle name
                 oRm.openStart("div");
                 oRm.class("doddle");
@@ -80,18 +152,37 @@ sap.ui.define(
 
 
                   //new doddle
-                  oRm.openStart("p");
-                  oRm.class("rightp");
-                  oRm.openEnd();
+                  oRm.openStart("div");
+                  oRm.class("column");
+                   oRm.openEnd();
+
+                   oRm.openStart("div");
+                   oRm.class("row");
+                    oRm.openEnd();
+
                   oRm.renderControl(oControl.getAggregation("_newDoddle"));
-                  oRm.close("p");
+                  oRm.renderControl(oControl.getAggregation("_playMusic"));
+                  oRm.renderControl(oControl.getAggregation("_black"));
+                  oRm.renderControl(oControl.getAggregation("_red"));
+                  oRm.renderControl(oControl.getAggregation("_blue"));
+                  oRm.renderControl(oControl.getAggregation("_green"));
+                  oRm.renderControl(oControl.getAggregation("_orange"));
+                  oRm.renderControl(oControl.getAggregation("_yellow"));
+                  oRm.close("div");
 
                   //playmusic
-                  oRm.openStart("p");
+                  // oRm.openStart("p");
                   oRm.class("leftp");
-                  oRm.openEnd();
-                  oRm.renderControl(oControl.getAggregation("_playMusic"));
-                  oRm.close("p");
+                  // oRm.openEnd();
+                  oRm.openStart("div");
+                  oRm.class("column");
+                   oRm.openEnd();
+
+
+          
+                  oRm.close("div");
+
+                  oRm.close("div");
 
 
 

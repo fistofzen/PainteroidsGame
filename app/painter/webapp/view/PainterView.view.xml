@@ -11,7 +11,12 @@
       <Page showHeader="false">
         <content>
           <hd:Splash hideSplash="onHideSplash" />
-          <hd:Header newDoddle="onNewDoddle" playMusic="onPlayMusic" eraseCanvas="onEraseCanvas" sendDoddle="onSendDoddle" type="{/Name}"/>
+          <hd:Header newDoddle="onNewDoddle" red="onFireRed" blue="onFireBlue"
+          orange="onFireOrange"
+          black="onFireBlack"
+          yellow="onFireYellow"
+          green="onFireGreen"
+          playMusic="onPlayMusic" eraseCanvas="onEraseCanvas" sendDoddle="onSendDoddle" type="{/Name}"/>
           <hd:Canvas id="drawonme"/>
 
           

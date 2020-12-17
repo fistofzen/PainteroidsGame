@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/Device",
 	"./model/models",
 	"./controller/ListSelector",
-	"./controller/ErrorHandler"
-], function (UIComponent, Device, models, ListSelector, ErrorHandler) {
+	"./controller/ErrorHandler",
+	"sap/ui/core/routing/HashChanger"
+], function (UIComponent, Device, models, ListSelector, ErrorHandler,HashChanger) {
 	"use strict";
 
 	return UIComponent.extend("sap.ui.demo.orderbrowser.Component", {
@@ -20,17 +21,23 @@ sap.ui.define([
 		 * @override
 		 */
 		init : function () {
+
+	  
+
 			this.oListSelector = new ListSelector();
 			this._oErrorHandler = new ErrorHandler(this);
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			this.setModel(models.createMainModel(), "main");
 
 			// call the base component's init function and create the App view
 			UIComponent.prototype.init.apply(this, arguments);
-
+			HashChanger.getInstance().replaceHash("");
+ 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
+			
 		},
 
 		/**

@@ -100,6 +100,24 @@ sap.ui.define([
 			this.getRouter().attachBypassed(this.onBypassed, this);
 		},
 
+		onHideSplash: function () {
+			let that = this;
+			let random = Math.floor(Math.random() * 11);
+	
+			const oBundle = this.getView().getModel("i18n").getResourceBundle();
+	
+			
+
+			if((this.getView().getModel("main").getData().Name).trim().length == 0) {
+
+				return MessageBox.success("Lütfen Adınızı ve Soyadınızı giriniz!");
+
+
+			}
+			$("#splashScreen").slideUp();
+	 
+		},
+		  
 		/* =========================================================== */
 		/* event handlers                                              */
 		/* =========================================================== */

@@ -7,6 +7,9 @@ service paintService{
 
   entity Drawings
   as projection on my.Drawings;
+  entity Guesses
+  as projection on my.Guesses;
+
 
   action submitDrawing(Drawing : Drawings) returns Drawings.ID;
 
