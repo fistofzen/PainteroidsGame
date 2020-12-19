@@ -189,19 +189,28 @@ sap.ui.define([
 
 							  
 								$.get(
-										"/paint/Categories?$filter=Language eq 'TR'&$top=3"
+										"/paint/Categories?$filter=Language eq 'TR'"
 									)
 										 .done(
 											function (oResult) {
-												oResult.value.forEach(element => {
-																									let a = {
-													id : element.Catid,
-													name : element.Name,
-													Selected:false
+										 
 
+												for (var i = 0; i < 3; i++) {
+												 
+													var rand = Math.floor(Math.random() * 140 + 1);
+
+													let a = {
+													
+														id : oResult.value[rand].Catid,
+														name :  oResult.value[rand].Name,
+														Selected:false
+	
+													}
+													results.push(a);
+
+												 
 												}
-												results.push(a);
-												});
+
 																				
 										var model = new sap.ui.model.json.JSONModel();
 										model.setData({
@@ -214,7 +223,7 @@ sap.ui.define([
 	 										var oRdg1 = this.getView().byId("rd1").setModel(model);
 
 										 this.getView().byId("rd1").removeAllItems();
-								 		
+								 		results = that.shuffleArray(results);
 										for (var i = 0; i < results.length; i++) {
 											var txt = results[i].name;
 											var oSegmentButtonItem =  new sap.m.Button({text : txt,
@@ -250,6 +259,18 @@ sap.ui.define([
                  
  
 		},
+
+		
+		 shuffleArray : function(array) {
+			for (var i = array.length - 1; i > 0; i--) {
+				var j = Math.floor(Math.random() * (i + 1));
+				var temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+			return array;
+		},
+
 		myFunction : function(a,b) {
 			
 			var that = this;
@@ -283,6 +304,22 @@ sap.ui.define([
 						that.openEndGameDialog();
 							this.getView().getModel("main").getData().ClickedItems.forEach(element => {
 							document.getElementById(element).className = "mydidbutton";
+
+							this.getView()
+							.getModel("main")
+							.getData()
+							.ClickedItems.pop(element);
+						});
+
+						
+					}else{
+						that.openEndGameDialogLost();
+						this.getView().getModel("main").getData().ClickedItems.forEach(element => {
+							document.getElementById(element).className = "mydidbutton";
+							this.getView()
+							.getModel("main")
+							.getData()
+							.ClickedItems.pop(element);
 						});
 					}
 
@@ -314,11 +351,34 @@ sap.ui.define([
 			  oDialog.open();
 			});
 		},
-		onFinishGame:function () {
-		  this.byId("endDialog").close();
- 
+		openEndGameDialogLost : function() {
+  
+			var oView = this.getView();  
+			// create dialog lazily
+			if (!this.pDialog1) {
+			  this.pDialog1 = Fragment.load({
+				id: oView.getId(),
+				name: "sap.ui.demo.orderbrowser.view.fragments.GameEndDialogLost",
+				controller: this
+			  }).then(function (oDialog) {
+				oView.addDependent(oDialog);
+				return oDialog;
+			  });
+			}
+			this.pDialog1.then(function(oDialog) {
+			  oDialog.open();
+			});
 		},
 
+		onFinishGameLost:function () {
+		  this.byId("endDialogLost").close();
+		  this.onCloseDetailPress();
+
+		},
+		onFinishGame:function () {
+			this.byId("endDialog").close();
+			this.onCloseDetailPress();
+		  },
 		_onBindingChange : function () {
 			var oView = this.getView(),
 				oElementBinding = oView.getElementBinding();

@@ -221,10 +221,12 @@ sap.ui.define(
       onPlayMusic: function () {
         if (audio) {
           audio.pause();
-        }
+          audio = null;
+        }else{
         var button = this.getView().byId("soundButton");
         audio = new Audio("../webapp/resources/sound/Our-Mountain_v003.mp3");
         audio.play();
+      }
       },
       onNewDoddle: function () {
         let that = this;

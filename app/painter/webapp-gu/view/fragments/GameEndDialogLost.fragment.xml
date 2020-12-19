@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+   <Dialog  showHeader="false"  id="endDialogLost" title="{i18n>endGameTitle}">
+      <VBox>
+         <Image src="images/basarisiz.png" press=".onFinishGameLost"/>
+         <FlexBox alignItems="Center" justifyContent="Center">
+            <items>
+               <!-- <Button type="Accept" width="230px" press=".onFinishGame" text="{i18n>endGameButton}" /> -->
+            </items>
+         </FlexBox>
+      </VBox>
+   </Dialog>
+</core:FragmentDefinition>
