@@ -12,7 +12,8 @@ sap.ui.define(
       createMainModel: function () {
 		var oData = {
 			Name: '',
-			editing: true
+      editing: true,
+      ClickedItems:[]
 		  };
 		  var oModel = new JSONModel(oData);
 		  oModel.setDefaultBindingMode("TwoWay");

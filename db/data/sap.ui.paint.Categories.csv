@@ -1,14 +1,145 @@
 CATID,NAME,LANGUAGE,DURATION
-2,Elma,TR,30
+2,Elma,TR,90
 3,Ev,TR,90
-4,Kiraz,TR,30
-5,Güneş,TR,30
-6,Kalem,TR,45
-7,Silgi,TR,120
+4,Kiraz,TR,90
+5,Güneş,TR,90
+6,Kalem,TR,90
+7,Silgi,TR,90
 44,Deniz,TR,90
-55,Kalp,TR,120
-22,Göz,TR,45
-11,Lamba,TR,120
-13,Armut,TR,45
-15,Muz,TR,45
-17,Kedi,TR,60
+25,Kalp,TR,90
+22,Göz,TR,90
+100,Climb,TR,90
+101,Climbing,TR,90
+102,Çapraz,TR,90
+103,Yapboz,TR,90
+104,Fishing,TR,90
+105,Uçurtma Uçurmak,TR,90
+106,Fly,TR,90
+107,Paint,TR,90
+108,Play Football,TR,90
+109,Play Tennis,TR,90
+110,Gitar Çalmak,TR,90
+111,Play The Piano,TR,90
+112,Playing Chess,TR,90
+113,Ride A Bike,TR,90
+114,Ride A Horse,TR,90
+115,Sing A Song,TR,90
+116,Yüzmek,TR,90
+117,Run,TR,90
+118,Sleep,TR,90
+119,Bean,TR,90
+120,Bookcase,TR,90
+121,Bottle,TR,90
+122,Glass,TR,90
+123,Büyüteç,TR,90
+124,Microscope,TR,90
+125,Bitki,TR,90
+126,Plastic Glass,TR,90
+127,Ayakkabı Kutusu,TR,90
+128,Belt,TR,90
+129,Bot,TR,90
+130,Cap,TR,90
+131,Bulut,TR,90
+132,Cloudy,TR,90
+133,Coat,TR,90
+134,Mont,TR,90
+135,Dirty,TR,90
+136,Eldiven,TR,90
+137,Nightgown,TR,90
+138,Kazak,TR,90
+139,Pyjamas,TR,90
+140,Yağmur,TR,90
+141,Scarf,TR,90
+142,Mevsim,TR,90
+143,Shoes,TR,90
+144,Etek,TR,90
+145,Slipper,TR,90
+146,Kar,TR,90
+147,Sock,TR,90
+148,Güneş,TR,90
+149,Sunglasses,TR,90
+150,Kazak,TR,90
+151,Tights,TR,90
+152,Pantolon,TR,90
+153,T-Shirt,TR,90
+154,Şemsiye,TR,90
+155,Bread,TR,90
+156,Tereyağı,TR,90
+157,Cheese,TR,90
+158,Patates,TR,90
+159,Cupcake,TR,90
+160,Balık,TR,90
+161,Honey,TR,90
+162,Dondurma,TR,90
+163,Jam,TR,90
+164,Sürahi,TR,90
+165,Juice,TR,90
+166,Limonata,TR,90
+167,Meat,TR,90
+168,Süt,TR,90
+169,Olive,TR,90
+170,Omlet,TR,90
+171,Sandwich,TR,90
+172,Çorba,TR,90
+173,Spaghetti,TR,90
+174,Çay,TR,90
+175,Balloon,TR,90
+176,Yapboz,TR,90
+177,Checkers,TR,90
+178,Diş Fırçalamak,TR,90
+179,Drive,TR,90
+180,Bisiklet,TR,90
+181,Cough,TR,90
+182,Head,TR,90
+183,Saç,TR,90
+184,Eye,TR,90
+185,Burun,TR,90
+186,Mouth,TR,90
+187,Diş,TR,90
+188,Teeth,TR,90
+189,Ear,TR,90
+190,Kol,TR,90
+191,Foot,TR,90
+192,Ayaklar,TR,90
+193,Toe,TR,90
+194,El,TR,90
+195,Finger,TR,90
+196,Bacak,TR,90
+197,Knee,TR,90
+198,Bardak,TR,90
+199,Tissue,TR,90
+200,Battaniye,TR,90
+201,Happy,TR,90
+202,Mutsuz,TR,90
+203,Sad,TR,90
+204,Korkunç,TR,90
+205,Short,TR,90
+206,Zayıf,TR,90
+207,Strong,TR,90
+208,Uzun,TR,90
+209,Ugly,TR,90
+210,Pasta,TR,90
+211,Candle,TR,90
+212,Paylaço,TR,90
+213,Party Hat,TR,90
+214,Saat,TR,90
+215,Minutes,TR,90
+216,Arı,TR,90
+217,Big Ear,TR,90
+218,Kuş,TR,90
+219,Claw,TR,90
+220,Inek,TR,90
+221,Duck,TR,90
+222,Fil,TR,90
+223,Horse,TR,90
+224,Aslan,TR,90
+225,Monkey,TR,90
+226,Papağan,TR,90
+227,Plaster,TR,90
+228,Puppy,TR,90
+229,Tavşan,TR,90
+230,Shelter,TR,90
+231,Yılan,TR,90
+232,Village,TR,90
+233,Kanat,TR,90
+234,Wolf,TR,90

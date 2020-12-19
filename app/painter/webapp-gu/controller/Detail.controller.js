@@ -229,6 +229,8 @@ sap.ui.define([
 											this.getView().byId("rd1").addItem(oSegmentButtonItem);
 										}
 
+										var clickedItems =  this.getView().getModel("main").getData().ClickedItems;
+
 
 											}.bind(this)
 								).fail(function () {});
@@ -277,8 +279,12 @@ sap.ui.define([
 					 
 				  } else {
 					
-					if(a === b)
+					if(a === b) {
 						that.openEndGameDialog();
+							this.getView().getModel("main").getData().ClickedItems.forEach(element => {
+							document.getElementById(element).className = "mydidbutton";
+						});
+					}
 
 				  }
 				}.bind(this)

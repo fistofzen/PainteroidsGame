@@ -28,7 +28,7 @@ sap.ui.define(
       },
       onHideSplash: function () {
         let that = this;
-        let random = Math.floor(Math.random() * 11);
+        let random = Math.floor(Math.random() * 143);
 
         const oBundle = this.getView().getModel("i18n").getResourceBundle();
 
@@ -57,7 +57,7 @@ sap.ui.define(
       onSendDoddle: function () {
         var that = this;
 
-        let random = Math.floor(Math.random() * 11);
+        let random = Math.floor(Math.random() * 143);
         const oBundle = this.getView().getModel("i18n").getResourceBundle();
 
         const image = $(
@@ -228,7 +228,7 @@ sap.ui.define(
       },
       onNewDoddle: function () {
         let that = this;
-        let random = Math.floor(Math.random() * 11);
+        let random = Math.floor(Math.random() * 143);
         $("#splashScreen").slideUp();
         const oBundle = this.getView().getModel("i18n").getResourceBundle();
 

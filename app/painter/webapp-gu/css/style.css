@@ -100,14 +100,14 @@
 }
 .sapMScrollCont{
   background-color: #555321;
-   background-image: url("../images/bg.png");
+   background-image: url("../images/arkaplan1.png");
 
 }
 
  
 .sapFDynamicPageContent {
     background-color: #555321;
-   background-image: url("../images/bg.png");
+   background-image: url("../images/arkaplan1.png");
 
 }
 
@@ -125,7 +125,7 @@
     height:100%;
     z-index:1000;
     background-color: #111222;
-    background-image: url('../images/bg3.png');
+    background-image: url('../images/arka.png');
  
    /* Full height */
    height: 100%;
@@ -176,9 +176,10 @@
     display:block !important;
     position:relative;
     padding:20px 10px !important;
-        width:200px !important;
+    width:120px !important;
     height:80px !important;
-    
+    padding: 30px !important;
+    margin-right: 40px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
     filter: dropshadow(color=#000, offx=1px, offy=1px);
@@ -291,6 +292,34 @@
   }
 
 
+  .mydidbutton{
+    color:white !important;
+    font-family:Helvetica, sans-serif !important;
+    font-weight:bold !important;
+    font-size:36px !important;
+    text-align: center !important;
+    text-decoration:none !important;
+    background-color:#aab4df !important;
+    display:block !important;
+    position:relative;
+    padding:2px 40px;
+    width:180px !important;
+    height:80px !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    margin: 20px;
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+  }
+
+
   
 
   .mystartbutton2{
@@ -348,7 +377,7 @@
     /* display: block; */
     /* margin-left: auto; */
     /* margin-right: auto; */
-    width: 10%;
+    width: 20%;
   }
 .button{
     position:relative;

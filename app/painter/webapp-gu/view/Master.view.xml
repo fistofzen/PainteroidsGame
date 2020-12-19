@@ -5,7 +5,7 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:fc="sap.f"
- 
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.f"
 	xmlns:card="sap.f.cards"
@@ -24,7 +24,9 @@
 
 		<l:Grid containerQuery="true" id="cardsGrid" defaultSpan="XL2 L4" class="gridProgressIndicator" hSpacing="0" content="{
 			path: '/Drawings',
-			parameters: { $expand: 'categories' }
+			parameters: { 
+				$select: 'ID,createdAt,createdBy,gameId,username',
+				$expand: 'categories' }
 			}" >
 
 	
@@ -41,7 +43,7 @@
 					class="sapUiSmallMargin"
 					justifyContent="SpaceBetween">
 						<HBox justifyContent="SpaceBetween">
-							<Button width="100%" class="mystartbutton" text="Haydi tahni et!" press="onSelectionChange"   />
+							<Button width="100%" id="aaa1" class="mystartbutton" app:mySuperExtraData="just great"  text="Haydi tahmin et!" press="onSelectionChange"   />
 							<!-- <Button  width="100%" press="onBuNedir"  text="Göster" class="myrefreshbutton" type="Emphasized" /> -->
 						</HBox>
 					</VBox>

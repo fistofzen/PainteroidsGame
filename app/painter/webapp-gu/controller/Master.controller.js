@@ -263,6 +263,8 @@ sap.ui.define([
 		 */
 		onSelectionChange : function (oEvent) {
 			var oButton = oEvent.getSource();
+			this.getView().getModel("main").getData().ClickedItems.push(oEvent.mParameters.id);
+			
 			var path = oButton.getBindingContext().getPath();
 
 			// skip navigation when deselecting an item in multi selection mode
