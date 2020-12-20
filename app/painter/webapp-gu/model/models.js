@@ -13,7 +13,8 @@ sap.ui.define(
 		var oData = {
 			Name: '',
       editing: true,
-      ClickedItems:[]
+      ClickedItems:[],
+      AnsweredItems:[]
 		  };
 		  var oModel = new JSONModel(oData);
 		  oModel.setDefaultBindingMode("TwoWay");

@@ -55,6 +55,10 @@ sap.ui.define(
           });
       },
       onSendDoddle: function () {
+
+        sap.ui.core.BusyIndicator.show();
+
+        
         var that = this;
 
         let random = Math.floor(Math.random() * 143);
@@ -148,6 +152,10 @@ sap.ui.define(
 
                                   //that.startTimer(oResult.value[0]);
                                   that.getView().byId("drawonme").eraseCanvas();
+
+                                  sap.ui.core.BusyIndicator.hide();
+
+                                  
                                 }.bind(this)
                               )
                               .fail(function () {});

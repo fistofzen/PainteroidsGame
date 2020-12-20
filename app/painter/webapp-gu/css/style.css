@@ -100,14 +100,26 @@
 }
 .sapMScrollCont{
   background-color: #555321;
-   background-image: url("../images/arkaplan1.png");
+ 
+   background: url("../images/arkaplan4.png") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
 
 }
 
  
 .sapFDynamicPageContent {
     background-color: #555321;
-   background-image: url("../images/arkaplan1.png");
+   background-image: url("../images/arkaplan4.png");
+   background-color: #555321;
+ 
+   background: url("../images/arkaplan4.png") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
 
 }
 
@@ -125,7 +137,12 @@
     height:100%;
     z-index:1000;
     background-color: #111222;
-    background-image: url('../images/arka.png');
+  
+    background: url('../images/arkaplan3.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
  
    /* Full height */
    height: 100%;
@@ -176,7 +193,7 @@
     display:block !important;
     position:relative;
     padding:20px 10px !important;
-    width:120px !important;
+    width:150px !important;
     height:80px !important;
     padding: 30px !important;
     margin-right: 40px;

@@ -287,8 +287,13 @@ sap.ui.define(
         var oButton = oEvent.getSource();
 
         const items = this.getView().getModel("main").getData().ClickedItems;
-
+        const answereditems = this.getView().getModel("main").getData().AnsweredItems;
         const note = items.find((item) => item === oEvent.mParameters.id);
+        const answered = answereditems.find((item) => item === oEvent.mParameters.id);
+
+        if(answered) {
+          return;
+        }
 
         if (note) {
 
@@ -296,10 +301,15 @@ sap.ui.define(
 
         } else {
 
+
+
+
+
+
 		  if( this.getView()
 		  .getModel("main")
 		  .getData()
-		  .ClickedItems) {
+		  .ClickedItems.length > 0) {
 
 			this.getView()
             .getModel("main")
