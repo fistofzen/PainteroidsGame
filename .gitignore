@@ -8,7 +8,7 @@ node_modules/
 package-lock.json
 target/
 
-# Web IDE, App Studio
+# Web IDE, App Studi
 .che/
 .gen/
 
